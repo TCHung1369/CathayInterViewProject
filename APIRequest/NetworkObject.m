@@ -109,7 +109,7 @@
                 friendModel.name = [friendDic objectForKey:@"name"];
                 friendModel.fid = [friendDic objectForKey:@"fid"];
                 friendModel.isTop = [ friendDic objectForKey:@"isTop"];
-                friendModel.status = (int)[friendDic objectForKey:@"status"];
+                friendModel.status = [friendDic objectForKey:@"status"];
                 
                 NSString * updateDate = [friendDic objectForKey:@"updateDate"];
                 if ([updateDate  containsString:@"/"]) {

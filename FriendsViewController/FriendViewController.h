@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendTableViewCellFirst.h"
+#import "FriendTableViewCellSecond.h"
+#import "FriendModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface FriendViewController : UIViewController
-
-
+@interface FriendViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 -(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource bundle:(NSBundle *)nibBundleOrNil;
 @end
 
-NS_ASSUME_NONNULL_END
+

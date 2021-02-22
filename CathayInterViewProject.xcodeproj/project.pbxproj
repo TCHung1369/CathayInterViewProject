@@ -26,6 +26,10 @@
 		A846F6A225E100CB00EEE49B /* CathayInterViewProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A846F6A125E100CB00EEE49B /* CathayInterViewProjectUITests.m */; };
 		A846F6B225E1040B00EEE49B /* RootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A846F6B125E1040B00EEE49B /* RootTabbarController.m */; };
 		A846F6B525E113BC00EEE49B /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A846F6B425E113BC00EEE49B /* CustomTabBar.m */; };
+		A86EB65625E3968B00E17F5E /* FriendTableViewCellFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = A86EB65425E3968B00E17F5E /* FriendTableViewCellFirst.m */; };
+		A86EB65725E3968B00E17F5E /* FriendTableViewCellFirst.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB65525E3968B00E17F5E /* FriendTableViewCellFirst.xib */; };
+		A86EB65B25E396A200E17F5E /* FriendTableViewCellSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = A86EB65925E396A200E17F5E /* FriendTableViewCellSecond.m */; };
+		A86EB65C25E396A200E17F5E /* FriendTableViewCellSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB65A25E396A200E17F5E /* FriendTableViewCellSecond.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,12 @@
 		A846F6B125E1040B00EEE49B /* RootTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTabbarController.m; sourceTree = "<group>"; };
 		A846F6B325E113BC00EEE49B /* CustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
 		A846F6B425E113BC00EEE49B /* CustomTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
+		A86EB65325E3968B00E17F5E /* FriendTableViewCellFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCellFirst.h; sourceTree = "<group>"; };
+		A86EB65425E3968B00E17F5E /* FriendTableViewCellFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCellFirst.m; sourceTree = "<group>"; };
+		A86EB65525E3968B00E17F5E /* FriendTableViewCellFirst.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCellFirst.xib; sourceTree = "<group>"; };
+		A86EB65825E396A200E17F5E /* FriendTableViewCellSecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCellSecond.h; sourceTree = "<group>"; };
+		A86EB65925E396A200E17F5E /* FriendTableViewCellSecond.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCellSecond.m; sourceTree = "<group>"; };
+		A86EB65A25E396A200E17F5E /* FriendTableViewCellSecond.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCellSecond.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +245,12 @@
 		A86EB64F25E2C41400E17F5E /* FriendListTableView */ = {
 			isa = PBXGroup;
 			children = (
+				A86EB65325E3968B00E17F5E /* FriendTableViewCellFirst.h */,
+				A86EB65425E3968B00E17F5E /* FriendTableViewCellFirst.m */,
+				A86EB65525E3968B00E17F5E /* FriendTableViewCellFirst.xib */,
+				A86EB65825E396A200E17F5E /* FriendTableViewCellSecond.h */,
+				A86EB65925E396A200E17F5E /* FriendTableViewCellSecond.m */,
+				A86EB65A25E396A200E17F5E /* FriendTableViewCellSecond.xib */,
 			);
 			path = FriendListTableView;
 			sourceTree = "<group>";
@@ -342,7 +358,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86EB65725E3968B00E17F5E /* FriendTableViewCellFirst.xib in Resources */,
 				A80B244425E1F16000CF7766 /* SelectedViewController.xib in Resources */,
+				A86EB65C25E396A200E17F5E /* FriendTableViewCellSecond.xib in Resources */,
 				A846F68A25E100CB00EEE49B /* LaunchScreen.storyboard in Resources */,
 				A80B245825E2A12C00CF7766 /* FriendViewController.xib in Resources */,
 				A80B244A25E227BB00CF7766 /* WithoutFriendsViewController.xib in Resources */,
@@ -380,7 +398,9 @@
 				A846F68D25E100CB00EEE49B /* main.m in Sources */,
 				A80B243925E1550E00CF7766 /* CustomNaviViewController.m in Sources */,
 				A846F6B225E1040B00EEE49B /* RootTabbarController.m in Sources */,
+				A86EB65625E3968B00E17F5E /* FriendTableViewCellFirst.m in Sources */,
 				A846F67F25E100C900EEE49B /* SceneDelegate.m in Sources */,
+				A86EB65B25E396A200E17F5E /* FriendTableViewCellSecond.m in Sources */,
 				A80B244925E227BB00CF7766 /* WithoutFriendsViewController.m in Sources */,
 				A80B245225E29C2700CF7766 /* FriendModel.m in Sources */,
 			);

@@ -10,7 +10,7 @@
 
 @implementation FriendModel
 
--(instancetype)initWithName:(NSString*)name andStatus:(int)status andTop:(NSString *)isTop andFid:(NSString *)fid andUpdateDate:(NSDate *)updateDate{
+-(instancetype)initWithName:(NSString*)name andStatus:(NSNumber*)status andTop:(NSString *)isTop andFid:(NSString *)fid andUpdateDate:(NSDate *)updateDate{
     
     self = [super init];
     if (self) {

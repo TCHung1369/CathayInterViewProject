@@ -21,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UIView *indicatorView;
 @property (weak, nonatomic) IBOutlet UILabel *chatBadge;
 @property (nonatomic, strong) NSArray * dataSource;
+@property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet UITableView *friendTableView;
+
+
 @end
 
 @implementation FriendViewController
@@ -54,6 +58,12 @@
         [self.nameLabel setText:@"Default User"];
         [self.settingIDLabel setText:[NSString stringWithFormat:@"KOKO ID：olylinhuang"]];
     }
+    
+    //Setting UITableViewCell
+    [self.friendTableView registerNib:[UINib nibWithNibName:@"FriendTableViewCellFirst" bundle:nil] forCellReuseIdentifier:@"FirstCell"];
+    
+    [self.friendTableView registerNib:[UINib nibWithNibName:@"FriendTableViewCellSecond" bundle:nil] forCellReuseIdentifier:@"SecondCell"];
+    
 }
 
 
@@ -69,4 +79,53 @@
     [self.navigationController popViewControllerAnimated:true];
     
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.dataSource count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //status : 0 (邀請已送出) First , 1 : 可轉帳 Second
+    FriendModel *friend = [self.dataSource objectAtIndex:indexPath.row];
+    NSLog(@"%@",friend.status);
+    if ([friend.status isEqualToNumber:@0] ) {
+         FriendTableViewCellFirst * cellFirst = [tableView dequeueReusableCellWithIdentifier:@"FirstCell"];
+           
+           
+           if ([friend.isTop isEqualToString:@"1"]) {
+               //有星星
+               [cellFirst.starImageView setHidden:false];
+           }else{
+               [cellFirst.starImageView setHidden:true];
+           }
+           cellFirst.name.text = friend.name;
+           
+           return cellFirst;
+    }else {
+        FriendTableViewCellSecond * cellSecond = [tableView dequeueReusableCellWithIdentifier:@"SecondCell"];
+                  
+                  
+                  if ([friend.isTop isEqualToString:@"1"]) {
+                      //有星星
+                      [cellSecond.starImageView setHidden:false];
+                  }else{
+                      [cellSecond.starImageView setHidden:true];
+                  }
+                  cellSecond.name.text = friend.name;
+                  
+                  return cellSecond;
+    
+    }
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60;
+}
+
+
 @end

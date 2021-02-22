@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FirstCell" id="KGk-i7-Jjw" customClass="FriendTableViewCellFirst">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-2A-68Y">
+                        <rect key="frame" x="20" y="0.0" width="335" height="60"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-uB-ZXk">
+                                <rect key="frame" x="275" y="18" width="60" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="a7V-zx-5AZ"/>
+                                    <constraint firstAttribute="height" constant="24" id="u8J-dB-Da0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
+                                <state key="normal" title="邀請中">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-JS-zbm">
+                                <rect key="frame" x="218" y="18" width="47" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="TK2-k7-V8h"/>
+                                    <constraint firstAttribute="width" constant="47" id="iNe-5R-DA6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
+                                <state key="normal" title="轉帳">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFriendsStar" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-av-B7t">
+                                <rect key="frame" x="10" y="23" width="14" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="T3S-0g-kUp"/>
+                                    <constraint firstAttribute="width" constant="14" id="XeD-A1-grM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgFriendsFemaleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6S9-5k-ROp">
+                                <rect key="frame" x="30" y="10" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Hvi-vT-5p9"/>
+                                    <constraint firstAttribute="height" constant="40" id="JZi-gE-kLf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-ab-GrE">
+                                <rect key="frame" x="85" y="19" width="48" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="1pV-KM-SVG"/>
+                                    <constraint firstAttribute="width" constant="48" id="Vse-g6-6ce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BF2-uB-ZXk" firstAttribute="leading" secondItem="jPg-JS-zbm" secondAttribute="trailing" constant="10" id="1yB-LQ-1iW"/>
+                            <constraint firstItem="jPg-JS-zbm" firstAttribute="centerY" secondItem="sYK-2A-68Y" secondAttribute="centerY" id="4ed-Ud-MWX"/>
+                            <constraint firstAttribute="width" constant="335" id="6U7-EN-fiN"/>
+                            <constraint firstItem="6S9-5k-ROp" firstAttribute="leading" secondItem="sYK-2A-68Y" secondAttribute="leading" constant="30" id="GE5-7N-EPF"/>
+                            <constraint firstItem="6S9-5k-ROp" firstAttribute="centerY" secondItem="sYK-2A-68Y" secondAttribute="centerY" id="TbG-ZI-j0X"/>
+                            <constraint firstAttribute="height" constant="60" id="bjv-iE-NWv"/>
+                            <constraint firstItem="3sE-av-B7t" firstAttribute="leading" secondItem="sYK-2A-68Y" secondAttribute="leading" constant="10" id="ddp-xq-uMR"/>
+                            <constraint firstAttribute="trailing" secondItem="jPg-JS-zbm" secondAttribute="trailing" constant="70" id="fWR-8a-yh8"/>
+                            <constraint firstItem="tAF-ab-GrE" firstAttribute="leading" secondItem="sYK-2A-68Y" secondAttribute="leading" constant="85" id="iu0-3u-aix"/>
+                            <constraint firstItem="tAF-ab-GrE" firstAttribute="centerY" secondItem="sYK-2A-68Y" secondAttribute="centerY" id="lmK-VR-V1K"/>
+                            <constraint firstItem="BF2-uB-ZXk" firstAttribute="centerY" secondItem="sYK-2A-68Y" secondAttribute="centerY" id="rYI-HV-Zxw"/>
+                            <constraint firstItem="3sE-av-B7t" firstAttribute="centerY" secondItem="sYK-2A-68Y" secondAttribute="centerY" id="vq5-iE-MB6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sYK-2A-68Y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y2t-ri-7nw"/>
+                    <constraint firstItem="sYK-2A-68Y" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wHb-fW-FcC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="containerView" destination="Y2t-ri-7nw" id="tfP-Lh-2l6"/>
+                <outlet property="inviteButton" destination="BF2-uB-ZXk" id="avK-q2-nHG"/>
+                <outlet property="name" destination="tAF-ab-GrE" id="aVJ-yB-TRc"/>
+                <outlet property="selfieimageView" destination="6S9-5k-ROp" id="lmt-DC-UHd"/>
+                <outlet property="starImageView" destination="3sE-av-B7t" id="5gd-PA-3BV"/>
+                <outlet property="transferButton" destination="jPg-JS-zbm" id="Jin-0D-MgG"/>
+            </connections>
+            <point key="canvasLocation" x="-22.463768115942031" y="46.875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icFriendsStar" width="14" height="14"/>
+        <image name="imgFriendsFemaleDefault" width="52" height="54"/>
+    </resources>
+</document>
