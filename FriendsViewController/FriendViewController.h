@@ -10,8 +10,8 @@
 #import "FriendTableViewCellFirst.h"
 #import "FriendTableViewCellSecond.h"
 #import "FriendModel.h"
-
-@interface FriendViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+#import "NetworkObject.h"
+@interface FriendViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 -(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource bundle:(NSBundle *)nibBundleOrNil;
 @end
 

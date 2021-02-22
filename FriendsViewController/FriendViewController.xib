@@ -13,11 +13,13 @@
                 <outlet property="atmButton" destination="xGV-Li-QKa" id="pfz-Pe-lcX"/>
                 <outlet property="chatBadge" destination="dr3-0s-uys" id="xvz-q0-SDU"/>
                 <outlet property="chatButton" destination="CMf-Ny-Pfg" id="X4u-NI-cjl"/>
+                <outlet property="containerView" destination="dhf-qd-ct0" id="OCl-5S-3Sq"/>
                 <outlet property="friendTableView" destination="Jgr-g4-alB" id="qRg-C9-AND"/>
                 <outlet property="indicatorView" destination="QIm-Lp-oOh" id="As7-GO-bnh"/>
                 <outlet property="myFriendButton" destination="PkG-eB-nii" id="0pp-zX-OuA"/>
                 <outlet property="nameLabel" destination="mNt-sC-ET1" id="UtR-4t-GKu"/>
                 <outlet property="scanButton" destination="OSi-Gl-aVg" id="Wyq-rT-aiv"/>
+                <outlet property="searchBar" destination="jSI-eK-jnM" id="6j5-HN-i3B"/>
                 <outlet property="searchView" destination="k2V-L7-rzo" id="aN1-6n-yVd"/>
                 <outlet property="selfieImageView" destination="E0T-0c-qmY" id="8SW-Q9-sXZ"/>
                 <outlet property="settingIDLabel" destination="Qfa-9L-Pfi" id="GtP-ic-L5G"/>
@@ -172,11 +174,14 @@
                                 <constraint firstAttribute="height" constant="56" id="2GR-zO-4FK"/>
                                 <constraint firstAttribute="width" constant="292" id="7F9-wt-8Sn"/>
                             </constraints>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
                                 <string>Title</string>
                             </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="jfH-Tm-bqG"/>
+                            </connections>
                         </searchBar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyU-j8-4sM">
                             <rect key="frame" x="321" y="20" width="24" height="24"/>
