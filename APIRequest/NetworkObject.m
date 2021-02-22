@@ -88,4 +88,53 @@
        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 }
 
+//Fetch Multi-FriendList
+
+-(void)fetchFLDataWithURL:(NSString *)url WithCompletion:(void (^)(NSArray *friendArray))completionBlock{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+            cachePolicy:NSURLRequestUseProtocolCachePolicy
+            timeoutInterval:10.0];
+    NSURLSession * session = [NSURLSession sharedSession];
+    NSURLSessionDataTask * dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *  data, NSURLResponse *  response, NSError *  error) {
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }else{
+            NSError *parseError = nil;
+            NSDictionary *friendData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            NSArray * friends = [friendData objectForKey:@"response"];
+            completionBlock(friends);
+        }
+    }];
+    [dataTask resume];
+}
+
+
+-(void)fetchMultiFLDataWithCompletion:(void (^)(NSArray * friendArray))completionBlock{
+    
+    NSArray * urls = @[FRIENDLIST1,FRIENDLIST2];
+    NSMutableArray * friendsArray = [NSMutableArray array];
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    for (NSString * url in urls) {
+        dispatch_group_enter(group);
+        [self fetchFLDataWithURL:url WithCompletion:^(NSArray *friendArray) {
+            NSLog(@"url:%@ ,friendArray : %@",url, friendArray);
+            [friendsArray addObject:friendArray];
+            dispatch_group_leave(group);
+        }];
+        
+    }
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        completionBlock(friendsArray);
+    });
+    
+    
+//    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+//    NSLog(@"friendsArray  : %@",friendsArray );
+//    completionBlock(friendsArray);
+    
+}
+
 @end

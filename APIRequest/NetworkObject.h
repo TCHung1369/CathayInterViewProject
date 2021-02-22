@@ -20,5 +20,6 @@
 +(instancetype)sharedInstance;
 -(void)fetchUserData;
 -(void)fetchNoFriendDataWithCompletion:(void (^)(BOOL isEmpty))completionBlock;
+-(void)fetchMultiFLDataWithCompletion:(void (^)(NSArray * friendArray))completionBlock;
 @end
 

@@ -160,6 +160,7 @@
 		A846F66E25E100C900EEE49B = {
 			isa = PBXGroup;
 			children = (
+				A86EB64F25E2C41400E17F5E /* FriendListTableView */,
 				A80B244F25E29C1100CF7766 /* FriendModel */,
 				A80B244B25E2646900CF7766 /* APIRequest */,
 				A80B244525E2278800CF7766 /* WithoutFriendsViewController */,
@@ -229,6 +230,13 @@
 				A80B243825E1550E00CF7766 /* CustomNaviViewController.m */,
 			);
 			path = RootTabbarController;
+			sourceTree = "<group>";
+		};
+		A86EB64F25E2C41400E17F5E /* FriendListTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FriendListTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

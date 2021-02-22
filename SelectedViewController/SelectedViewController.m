@@ -61,8 +61,21 @@
 }
 
 - (IBAction)FLVC:(id)sender{
-    FriendViewController *vc = [[FriendViewController alloc] initWithNibName:@"FriendViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:true];
+    
+    
+    [[NetworkObject sharedInstance] fetchMultiFLDataWithCompletion:^(NSArray *friendArray) {
+        
+        NSLog(@"Fetch Result : %@",friendArray);
+        
+        if ([friendArray count] == 0) {
+            return;;
+        }else {
+            FriendViewController *vc = [[FriendViewController alloc] initWithNibName:@"FriendViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+    }];
+    
+    
     
 }
 @end
