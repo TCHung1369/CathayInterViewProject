@@ -13,9 +13,9 @@
 @property (nonatomic, assign) int status;
 @property (nonatomic, strong) NSString *isTop;
 @property (nonatomic, strong) NSString *fid;
-@property (nonatomic, strong) NSString *updateDate;
+@property (nonatomic, strong) NSDate *updateDate;
 
--(instancetype)initWithName:(NSString*)name andStatus:(int)status andTop:(NSString *)isTop andFid:(NSString *)fid andUpdateDate:(NSString *)updateDate;
+-(instancetype)initWithName:(NSString*)name andStatus:(int)status andTop:(NSString *)isTop andFid:(NSString *)fid andUpdateDate:(NSDate *)updateDate;
 
 @end
 

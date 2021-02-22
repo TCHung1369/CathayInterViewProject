@@ -102,7 +102,36 @@
             NSError *parseError = nil;
             NSDictionary *friendData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
             NSArray * friends = [friendData objectForKey:@"response"];
-            completionBlock(friends);
+            NSMutableArray * friendsMutableArray = [NSMutableArray array];
+            
+            for (NSDictionary * friendDic in friends) {
+                FriendModel *friendModel = [[FriendModel alloc] init];
+                friendModel.name = [friendDic objectForKey:@"name"];
+                friendModel.fid = [friendDic objectForKey:@"fid"];
+                friendModel.isTop = [ friendDic objectForKey:@"isTop"];
+                friendModel.status = (int)[friendDic objectForKey:@"status"];
+                
+                NSString * updateDate = [friendDic objectForKey:@"updateDate"];
+                if ([updateDate  containsString:@"/"]) {
+                    
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+                    NSDate *date = [dateFormatter dateFromString:updateDate];
+                    friendModel.updateDate = date;
+                    
+                }else {
+                    
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    [dateFormatter setDateFormat:@"yyyyMMdd"];
+                    NSDate *date = [dateFormatter dateFromString:updateDate];
+                    friendModel.updateDate = date;
+                }
+                
+                [friendsMutableArray addObject:friendModel];
+                
+            }
+            
+            completionBlock(friendsMutableArray);
         }
     }];
     [dataTask resume];
@@ -119,7 +148,6 @@
     for (NSString * url in urls) {
         dispatch_group_enter(group);
         [self fetchFLDataWithURL:url WithCompletion:^(NSArray *friendArray) {
-            NSLog(@"url:%@ ,friendArray : %@",url, friendArray);
             [friendsArray addObject:friendArray];
             dispatch_group_leave(group);
         }];
@@ -127,13 +155,35 @@
     }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        completionBlock(friendsArray);
+        NSMutableArray *flatArray = [NSMutableArray array];
+        for (NSMutableArray * array  in friendsArray) {
+            [flatArray addObjectsFromArray:array];
+        }
+        NSLog(@"flatArray : %@",flatArray);
+        //Rearrange Array
+        NSMutableIndexSet * indexSet = [[NSMutableIndexSet alloc] init];
+        for (FriendModel * friend in flatArray) {
+            NSString * fid = friend.fid;
+            NSDate * date = friend.updateDate;
+            NSLog(@"Start Compare : %@, %@", fid,date);
+            for (FriendModel * compared in flatArray) {
+                NSString * comparedFid = compared.fid;
+                NSDate * comparedDate = compared.updateDate;
+                NSLog(@"Compared : %@, %@", comparedFid,comparedDate);
+                if ([fid isEqualToString:comparedFid]) {
+                    if (comparedDate > date) {
+                        [indexSet addIndex:[flatArray indexOfObject:friend]];
+                    }
+                }
+            }
+        }
+        [flatArray removeObjectsAtIndexes:indexSet];
+        [flatArray sortUsingComparator:^NSComparisonResult(FriendModel* obj1, FriendModel* obj2) {
+            return [obj2.updateDate compare:obj1.updateDate];
+        }];
+        
+        completionBlock(flatArray);
     });
-    
-    
-//    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-//    NSLog(@"friendsArray  : %@",friendsArray );
-//    completionBlock(friendsArray);
     
 }
 

@@ -62,16 +62,18 @@
 
 - (IBAction)FLVC:(id)sender{
     
-    
+    [self.indicator startAnimating];
     [[NetworkObject sharedInstance] fetchMultiFLDataWithCompletion:^(NSArray *friendArray) {
         
-        NSLog(@"Fetch Result : %@",friendArray);
-        
         if ([friendArray count] == 0) {
+            [self.indicator stopAnimating];
             return;;
         }else {
-            FriendViewController *vc = [[FriendViewController alloc] initWithNibName:@"FriendViewController" bundle:nil];
-            [self.navigationController pushViewController:vc animated:true];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicator stopAnimating];
+                 FriendViewController *vc = [[FriendViewController alloc] initWithNibName:@"FriendViewController" dataSource:friendArray bundle:nil];
+                [self.navigationController pushViewController:vc animated:true];
+            });
         }
     }];
     
