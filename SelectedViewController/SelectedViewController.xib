@@ -23,7 +23,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEE-at-F7R">
                     <rect key="frame" x="80.5" y="212" width="214" height="50"/>
-                    <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="peP-he-iDC"/>
                     </constraints>
@@ -37,7 +37,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-g8-rIb">
                     <rect key="frame" x="80.5" y="308.5" width="214" height="50"/>
-                    <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="70C-et-xZL"/>
                         <constraint firstAttribute="width" constant="214" id="cmQ-Vz-8EZ"/>
@@ -61,7 +61,7 @@
                 </activityIndicatorView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCk-F2-Xii">
                     <rect key="frame" x="80.5" y="405" width="214" height="50"/>
-                    <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="cco-Gh-pB2"/>
                     </constraints>

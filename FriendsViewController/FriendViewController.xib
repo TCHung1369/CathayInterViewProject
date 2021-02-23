@@ -173,7 +173,6 @@
                             <rect key="frame" x="17" y="4" width="292" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="2GR-zO-4FK"/>
-                                <constraint firstAttribute="width" constant="292" id="7F9-wt-8Sn"/>
                             </constraints>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <scopeButtonTitles>
@@ -195,8 +194,9 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="lyU-j8-4sM" firstAttribute="leading" secondItem="jSI-eK-jnM" secondAttribute="trailing" constant="12" id="4vY-LX-XMi"/>
                         <constraint firstItem="jSI-eK-jnM" firstAttribute="centerY" secondItem="k2V-L7-rzo" secondAttribute="centerY" id="J6L-9N-tWr"/>
+                        <constraint firstItem="lyU-j8-4sM" firstAttribute="leading" secondItem="jSI-eK-jnM" secondAttribute="trailing" constant="12" id="XvZ-FW-JLX"/>
+                        <constraint firstAttribute="trailing" secondItem="lyU-j8-4sM" secondAttribute="trailing" constant="30" id="csK-5P-f2Q"/>
                         <constraint firstItem="jSI-eK-jnM" firstAttribute="leading" secondItem="k2V-L7-rzo" secondAttribute="leading" constant="17" id="hhM-Ti-vgy"/>
                         <constraint firstAttribute="height" constant="64" id="mNx-MT-ON8"/>
                         <constraint firstItem="lyU-j8-4sM" firstAttribute="centerY" secondItem="k2V-L7-rzo" secondAttribute="centerY" id="oDP-P9-J6R"/>

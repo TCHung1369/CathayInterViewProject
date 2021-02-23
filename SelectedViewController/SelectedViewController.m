@@ -82,14 +82,14 @@
 - (IBAction)FLInviteVC:(id)sender{
     
     [self.indicator startAnimating];
-    [[NetworkObject sharedInstance] fetchFriendAndInviteDataWithCompletion:^(NSArray *friendArray) {
+    [[NetworkObject sharedInstance] fetchFriendAndInviteDataWithCompletion:^(NSArray *friendArray, NSArray *invitingArray) {
         if ([friendArray count] == 0) {
             [self.indicator stopAnimating];
             return;;
         }else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.indicator stopAnimating];
-                 InvitingViewController *vc = [[InvitingViewController alloc] initWithNibName:@"InvitingViewController" dataSource:friendArray bundle:nil];
+                 InvitingViewController *vc = [[InvitingViewController alloc] initWithNibName:@"InvitingViewController" dataSource:friendArray andInvitingData:invitingArray bundle:nil];
                 [self.navigationController pushViewController:vc animated:true];
             });
         }

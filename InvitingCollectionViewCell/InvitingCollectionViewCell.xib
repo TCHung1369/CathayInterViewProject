@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="gTV-IL-0wX" customClass="InvitingCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="98"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="98"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x94-8Y-jS4">
+                        <rect key="frame" x="0.0" y="0.0" width="351" height="98"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-Ev-Yt5">
+                                <rect key="frame" x="18" y="14" width="315" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgFriendsFemaleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="kfY-3c-vaV">
+                                        <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Mbb-hI-y9d"/>
+                                            <constraint firstAttribute="height" constant="40" id="Vil-Gp-aJc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="張麻子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-GE-nIK">
+                                        <rect key="frame" x="70" y="14" width="48" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="3iq-yr-sVC"/>
+                                            <constraint firstAttribute="width" constant="48" id="EuU-xN-WuY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                                        <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀請你成為好友：）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur7-jo-9EZ">
+                                        <rect key="frame" x="70" y="38" width="117" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="c0i-f3-xxY"/>
+                                            <constraint firstAttribute="width" constant="117" id="zTw-Uz-9fr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="13"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da3-cw-jY1">
+                                        <rect key="frame" x="225" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="1ra-ZE-FtM"/>
+                                            <constraint firstAttribute="height" constant="30" id="hpC-f7-k1v"/>
+                                        </constraints>
+                                        <state key="normal" image="btnFriendsAgree"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmO-kv-TfK">
+                                        <rect key="frame" x="270" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Er3-k2-oqh"/>
+                                            <constraint firstAttribute="height" constant="30" id="fTr-Ri-Njd"/>
+                                        </constraints>
+                                        <state key="normal" image="btnFriendsDelet"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="da3-cw-jY1" secondAttribute="trailing" constant="60" id="4xC-bI-15y"/>
+                                    <constraint firstItem="uY6-GE-nIK" firstAttribute="top" secondItem="BJl-Ev-Yt5" secondAttribute="top" constant="14" id="H5K-cz-WoM"/>
+                                    <constraint firstItem="PmO-kv-TfK" firstAttribute="centerY" secondItem="BJl-Ev-Yt5" secondAttribute="centerY" id="Ihk-l9-cvg"/>
+                                    <constraint firstAttribute="trailing" secondItem="PmO-kv-TfK" secondAttribute="trailing" constant="15" id="Q5m-B6-QxV"/>
+                                    <constraint firstItem="kfY-3c-vaV" firstAttribute="centerY" secondItem="BJl-Ev-Yt5" secondAttribute="centerY" id="RmB-Ny-Gxk"/>
+                                    <constraint firstItem="da3-cw-jY1" firstAttribute="centerY" secondItem="BJl-Ev-Yt5" secondAttribute="centerY" id="Wdv-Ai-0lr"/>
+                                    <constraint firstAttribute="height" constant="70" id="ckF-Tw-SOc"/>
+                                    <constraint firstItem="ur7-jo-9EZ" firstAttribute="top" secondItem="uY6-GE-nIK" secondAttribute="bottom" constant="2" id="d8Y-Wz-Grn"/>
+                                    <constraint firstItem="uY6-GE-nIK" firstAttribute="leading" secondItem="kfY-3c-vaV" secondAttribute="trailing" constant="15" id="dg0-cf-gQP"/>
+                                    <constraint firstItem="ur7-jo-9EZ" firstAttribute="leading" secondItem="kfY-3c-vaV" secondAttribute="trailing" constant="15" id="eDv-q5-E52"/>
+                                    <constraint firstItem="kfY-3c-vaV" firstAttribute="leading" secondItem="BJl-Ev-Yt5" secondAttribute="leading" constant="15" id="q2D-WZ-wO0"/>
+                                    <constraint firstAttribute="width" constant="315" id="tSK-R4-KVm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.shadowOffset" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BJl-Ev-Yt5" firstAttribute="centerX" secondItem="x94-8Y-jS4" secondAttribute="centerX" id="iZQ-Ep-hUu"/>
+                            <constraint firstItem="BJl-Ev-Yt5" firstAttribute="centerY" secondItem="x94-8Y-jS4" secondAttribute="centerY" id="oes-IV-nQ0"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.shadowOffset" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="x94-8Y-jS4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cfh-fn-eD5"/>
+                <constraint firstAttribute="trailing" secondItem="x94-8Y-jS4" secondAttribute="trailing" id="Wb8-o0-UJj"/>
+                <constraint firstItem="x94-8Y-jS4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fal-2z-x4A"/>
+                <constraint firstAttribute="bottom" secondItem="x94-8Y-jS4" secondAttribute="bottom" id="zVe-5r-AkX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="393" height="78"/>
+            <connections>
+                <outlet property="acceptButton" destination="da3-cw-jY1" id="SUF-wk-HD9"/>
+                <outlet property="containerView" destination="BJl-Ev-Yt5" id="0rT-b9-73R"/>
+                <outlet property="deleteButton" destination="PmO-kv-TfK" id="Xzw-y4-vPo"/>
+                <outlet property="desciption" destination="ur7-jo-9EZ" id="MKT-B5-IOR"/>
+                <outlet property="name" destination="uY6-GE-nIK" id="fqN-Hb-Z0a"/>
+                <outlet property="selfieImageView" destination="kfY-3c-vaV" id="Tpk-fP-JLs"/>
+            </connections>
+            <point key="canvasLocation" x="73" y="-58"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btnFriendsAgree" width="30" height="30"/>
+        <image name="btnFriendsDelet" width="30" height="30"/>
+        <image name="imgFriendsFemaleDefault" width="52" height="54"/>
+    </resources>
+</document>

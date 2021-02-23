@@ -32,12 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:true];
-    [self DefaultSetting];
+    
 
 }
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    [self DefaultSetting];
 }
 
 -(void)DefaultSetting{

@@ -20,7 +20,7 @@
 +(instancetype)sharedInstance;
 -(void)fetchUserData;
 -(void)fetchNoFriendDataWithCompletion:(void (^)(BOOL isEmpty))completionBlock;
--(void)fetchFriendAndInviteDataWithCompletion:(void (^)(NSArray * friendArray))completionBlock;
+-(void)fetchFriendAndInviteDataWithCompletion:(void (^)(NSArray * friendArray, NSArray * invitingArray))completionBlock;
 -(void)fetchMultiFLDataWithCompletion:(void (^)(NSArray * friendArray))completionBlock;
 @end
 

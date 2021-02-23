@@ -25,16 +25,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *friendBadge;
 @property (nonatomic, strong) NSArray * dataSource;
 @property (nonatomic, strong) NSMutableArray * searchDataSource;
+@property (nonatomic, strong) NSMutableArray * invitingDataSource;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UITableView *friendTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (assign,nonatomic) BOOL isSearchMode;
 @property (nonatomic, strong) UIRefreshControl * refreshControl;
-@property (nonatomic, strong) UICollectionView *friendCollectionView;
-
-@property (assign, nonatomic)CGFloat deltaPosition;
-@property (assign, nonatomic)CGRect searchBarOriginRect;
-@property (assign, nonatomic)CGRect tableViewOriginRect;
+@property (nonatomic, strong) IBOutlet UICollectionView *friendCollectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewTopConstraint;
 
 @end
@@ -42,12 +39,13 @@
 @implementation InvitingViewController
 
 
--(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource bundle:(NSBundle *)nibBundleOrNil{
+-(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource andInvitingData:(NSArray *)invitingData bundle:(NSBundle *)nibBundleOrNil{
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.dataSource = dataSource;
         self.searchDataSource = [dataSource mutableCopy];
+        self.invitingDataSource = [invitingData mutableCopy];
         self.isSearchMode = false;
     }
     return self;
@@ -58,12 +56,6 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:true];
     [self DefaultSetting];
-}
-
--(void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    self.deltaPosition = self.view.frame.size.height - self.searchView.frame.size.height - self.friendTableView.frame.size.height + 68 - 44;
-    NSLog(@"self.deltaPosition : %f",self.deltaPosition);
 }
 
 
@@ -81,6 +73,13 @@
         [self.settingIDLabel setText:[NSString stringWithFormat:@"KOKO ID：olylinhuang"]];
     }
     
+    if ([self.invitingDataSource count] != 0) {
+        self.friendBadge.text = [NSString stringWithFormat:@"%lu",(unsigned long)[self.invitingDataSource count]];
+    }else{
+        [self.friendBadge setHidden:true];
+    }
+    
+    
     //Add UIRefreshControl
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl setAttributedTitle:[[NSAttributedString alloc]initWithString:@"列表更新中..."]];
@@ -90,6 +89,10 @@
     
     [self.friendTableView registerNib:[UINib nibWithNibName:@"FriendTableViewCellSecond" bundle:nil] forCellReuseIdentifier:@"SecondCell"];
     [self.friendTableView addSubview:self.refreshControl];
+    
+    //Setting CollectionView
+    [self.friendCollectionView registerNib:[UINib nibWithNibName:@"InvitingCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CollectionCell"];
+    
 }
 
 
@@ -222,5 +225,32 @@
     self.searchDataSource = [self.dataSource mutableCopy];
     [self.friendTableView reloadData];
 }
+
+
+//UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return [self.invitingDataSource count];
+}
+
+
+-(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    InvitingCollectionViewCell * collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
+    
+    FriendModel * friend = [self.invitingDataSource objectAtIndex:indexPath.row];
+    [collectionCell.name setText:friend.name];
+    
+    
+    
+    return collectionCell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height / 2);
+    
+    
+}
+
+
 
 @end

@@ -32,6 +32,8 @@
 		A86EB65C25E396A200E17F5E /* FriendTableViewCellSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB65A25E396A200E17F5E /* FriendTableViewCellSecond.xib */; };
 		A86EB66125E48B2600E17F5E /* InvitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86EB65F25E48B2600E17F5E /* InvitingViewController.m */; };
 		A86EB66225E48B2600E17F5E /* InvitingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB66025E48B2600E17F5E /* InvitingViewController.xib */; };
+		A86EB66725E4EB4100E17F5E /* InvitingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86EB66525E4EB4100E17F5E /* InvitingCollectionViewCell.m */; };
+		A86EB66825E4EB4100E17F5E /* InvitingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB66625E4EB4100E17F5E /* InvitingCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,9 @@
 		A86EB65E25E48B2600E17F5E /* InvitingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvitingViewController.h; sourceTree = "<group>"; };
 		A86EB65F25E48B2600E17F5E /* InvitingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvitingViewController.m; sourceTree = "<group>"; };
 		A86EB66025E48B2600E17F5E /* InvitingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitingViewController.xib; sourceTree = "<group>"; };
+		A86EB66425E4EB4100E17F5E /* InvitingCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvitingCollectionViewCell.h; sourceTree = "<group>"; };
+		A86EB66525E4EB4100E17F5E /* InvitingCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvitingCollectionViewCell.m; sourceTree = "<group>"; };
+		A86EB66625E4EB4100E17F5E /* InvitingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitingCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +180,7 @@
 		A846F66E25E100C900EEE49B = {
 			isa = PBXGroup;
 			children = (
+				A86EB66325E4EB1200E17F5E /* InvitingCollectionViewCell */,
 				A86EB64F25E2C41400E17F5E /* FriendListTableView */,
 				A80B244F25E29C1100CF7766 /* FriendModel */,
 				A80B244B25E2646900CF7766 /* APIRequest */,
@@ -269,6 +275,16 @@
 				A86EB66025E48B2600E17F5E /* InvitingViewController.xib */,
 			);
 			path = InvitingViewController;
+			sourceTree = "<group>";
+		};
+		A86EB66325E4EB1200E17F5E /* InvitingCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A86EB66425E4EB4100E17F5E /* InvitingCollectionViewCell.h */,
+				A86EB66525E4EB4100E17F5E /* InvitingCollectionViewCell.m */,
+				A86EB66625E4EB4100E17F5E /* InvitingCollectionViewCell.xib */,
+			);
+			path = InvitingCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +394,7 @@
 				A80B244425E1F16000CF7766 /* SelectedViewController.xib in Resources */,
 				A86EB66225E48B2600E17F5E /* InvitingViewController.xib in Resources */,
 				A86EB65C25E396A200E17F5E /* FriendTableViewCellSecond.xib in Resources */,
+				A86EB66825E4EB4100E17F5E /* InvitingCollectionViewCell.xib in Resources */,
 				A846F68A25E100CB00EEE49B /* LaunchScreen.storyboard in Resources */,
 				A80B245825E2A12C00CF7766 /* FriendViewController.xib in Resources */,
 				A80B244A25E227BB00CF7766 /* WithoutFriendsViewController.xib in Resources */,
@@ -412,6 +429,7 @@
 				A846F6B525E113BC00EEE49B /* CustomTabBar.m in Sources */,
 				A80B245725E2A12C00CF7766 /* FriendViewController.m in Sources */,
 				A80B244325E1F16000CF7766 /* SelectedViewController.m in Sources */,
+				A86EB66725E4EB4100E17F5E /* InvitingCollectionViewCell.m in Sources */,
 				A86EB66125E48B2600E17F5E /* InvitingViewController.m in Sources */,
 				A846F68D25E100CB00EEE49B /* main.m in Sources */,
 				A80B243925E1550E00CF7766 /* CustomNaviViewController.m in Sources */,

@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="height" constant="40" id="JZi-gE-kLf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-ab-GrE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黃四郎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-ab-GrE">
                                 <rect key="frame" x="85" y="19" width="48" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="1pV-KM-SVG"/>
@@ -66,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BF2-uB-ZXk" firstAttribute="leading" secondItem="jPg-JS-zbm" secondAttribute="trailing" constant="10" id="1yB-LQ-1iW"/>
                             <constraint firstItem="jPg-JS-zbm" firstAttribute="centerY" secondItem="sYK-2A-68Y" secondAttribute="centerY" id="4ed-Ud-MWX"/>
@@ -83,6 +83,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="sYK-2A-68Y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y2t-ri-7nw"/>
                     <constraint firstItem="sYK-2A-68Y" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wHb-fW-FcC"/>

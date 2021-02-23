@@ -88,11 +88,11 @@
        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 }
 
--(void)fetchFriendAndInviteDataWithCompletion:(void (^)(NSArray * friendArray))completionBlock{
+-(void)fetchFriendAndInviteDataWithCompletion:(void (^)(NSArray * friendArray,NSArray * invitingArray))completionBlock{
 
     NSArray * urls = @[FRIENDANDINVITION];
     NSMutableArray * friendsArray = [NSMutableArray array];
-    
+    NSMutableArray * invitingArray = [NSMutableArray array];
     dispatch_group_t group = dispatch_group_create();
     
     for (NSString * url in urls) {
@@ -128,8 +128,17 @@
         [flatArray sortUsingComparator:^NSComparisonResult(FriendModel* obj1, FriendModel* obj2) {
             return [obj2.updateDate compare:obj1.updateDate];
         }];
-        
-        completionBlock(flatArray);
+        [indexSet removeAllIndexes];
+        //Separate who is inviting me
+        for (FriendModel * friend in flatArray) {
+            if ([friend.status  isEqual: @2]) {
+                [invitingArray addObject:friend];
+                [indexSet addIndex:[flatArray indexOfObject:friend]];
+            }
+        }
+        [flatArray removeObjectsAtIndexes:indexSet];
+        [indexSet removeAllIndexes];
+        completionBlock(flatArray,invitingArray);
     });
     
 }

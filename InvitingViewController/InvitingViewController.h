@@ -11,10 +11,11 @@
 #import "FriendTableViewCellSecond.h"
 #import "FriendModel.h"
 #import "NetworkObject.h"
+#import "InvitingCollectionViewCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InvitingViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
--(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource bundle:(NSBundle *)nibBundleOrNil;
+@interface InvitingViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+-(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource andInvitingData:(NSArray *)invitingData bundle:(NSBundle *)nibBundleOrNil;
 @end
 
 NS_ASSUME_NONNULL_END
