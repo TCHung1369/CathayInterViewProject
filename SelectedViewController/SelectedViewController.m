@@ -9,6 +9,7 @@
 #import "SelectedViewController.h"
 #import "WithoutFriendsViewController.h"
 #import "FriendViewController.h"
+#import "InvitingViewController.h"
 
 @interface SelectedViewController ()
 
@@ -76,8 +77,22 @@
             });
         }
     }];
+}
+
+- (IBAction)FLInviteVC:(id)sender{
     
-    
-    
+    [self.indicator startAnimating];
+    [[NetworkObject sharedInstance] fetchFriendAndInviteDataWithCompletion:^(NSArray *friendArray) {
+        if ([friendArray count] == 0) {
+            [self.indicator stopAnimating];
+            return;;
+        }else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicator stopAnimating];
+                 InvitingViewController *vc = [[InvitingViewController alloc] initWithNibName:@"InvitingViewController" dataSource:friendArray bundle:nil];
+                [self.navigationController pushViewController:vc animated:true];
+            });
+        }
+    }];
 }
 @end

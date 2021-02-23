@@ -1,15 +1,16 @@
 //
-//  FriendViewController.m
+//  InvitingViewController.m
 //  CathayInterViewProject
 //
-//  Created by Tzu_Chen on 21.02.21.
+//  Created by Tzu_Chen on 23.02.21.
 //  Copyright © 2021 Tzu-Chen. All rights reserved.
 //
 
-#import "FriendViewController.h"
+#import "InvitingViewController.h"
 
-@interface FriendViewController ()
+@interface InvitingViewController ()
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *switchContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *atmButton;
 @property (weak, nonatomic) IBOutlet UIButton *transferButton;
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *chatButton;
 @property (weak, nonatomic) IBOutlet UIView *indicatorView;
 @property (weak, nonatomic) IBOutlet UILabel *chatBadge;
+@property (weak, nonatomic) IBOutlet UILabel *friendBadge;
 @property (nonatomic, strong) NSArray * dataSource;
 @property (nonatomic, strong) NSMutableArray * searchDataSource;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
@@ -28,13 +30,17 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (assign,nonatomic) BOOL isSearchMode;
 @property (nonatomic, strong) UIRefreshControl * refreshControl;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchTopConstraint;
+@property (nonatomic, strong) UICollectionView *friendCollectionView;
 
-
+@property (assign, nonatomic)CGFloat deltaPosition;
+@property (assign, nonatomic)CGRect searchBarOriginRect;
+@property (assign, nonatomic)CGRect tableViewOriginRect;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewTopConstraint;
 
 @end
 
-@implementation FriendViewController
+@implementation InvitingViewController
+
 
 -(id)initWithNibName:(NSString *)nibNameOrNil dataSource:(NSArray *)dataSource bundle:(NSBundle *)nibBundleOrNil{
     
@@ -54,11 +60,18 @@
     [self DefaultSetting];
 }
 
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.deltaPosition = self.view.frame.size.height - self.searchView.frame.size.height - self.friendTableView.frame.size.height + 68 - 44;
+    NSLog(@"self.deltaPosition : %f",self.deltaPosition);
+}
+
+
 -(void)DefaultSetting{
     [self roundCornerView:self.selfieImageView];
     [self roundCornerView:self.indicatorView];
     [self roundCornerView:self.chatBadge];
-    
+    [self roundCornerView:self.friendBadge];
     //KOKO ID：olylinhuang
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"name"] != nil) {
         [self.nameLabel setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"name"]];
@@ -130,7 +143,6 @@
     }else{
         friend = [self.dataSource objectAtIndex:indexPath.row];
     }
-    NSLog(@"%@",friend.status);
     if ([friend.status isEqualToNumber:@0] ) {
          FriendTableViewCellFirst * cellFirst = [tableView dequeueReusableCellWithIdentifier:@"FirstCell"];
            
@@ -169,11 +181,13 @@
 //UIsearchBar Delegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     self.isSearchMode = true;
+    
     [UIView animateWithDuration:0.5 animations:^{
-        self.searchTopConstraint.constant = -129;
+        self.searchViewTopConstraint.constant = -312;
         [self.view layoutIfNeeded];
+
     }];
-   
+    
     [self.friendTableView reloadData];
     return true;
 }
@@ -201,8 +215,8 @@
     searchBar.text = @"";
     [searchBar resignFirstResponder];
     [UIView animateWithDuration:0.5 animations:^{
-        self.searchTopConstraint.constant = 0;
-               [self.view layoutIfNeeded];
+        self.searchViewTopConstraint.constant = 0;
+       [self.view layoutIfNeeded];
     }];
     [self.searchDataSource removeAllObjects];
     self.searchDataSource = [self.dataSource mutableCopy];

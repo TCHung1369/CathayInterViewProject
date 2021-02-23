@@ -21,10 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEE-at-F7R">
-                    <rect key="frame" x="80" y="158" width="214" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEE-at-F7R">
+                    <rect key="frame" x="80.5" y="212" width="214" height="50"/>
                     <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="peP-he-iDC"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="無好友">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,10 +35,13 @@
                         <action selector="withoutFLVC:" destination="-1" eventType="touchUpInside" id="hO5-SZ-QwO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-g8-rIb">
-                    <rect key="frame" x="80" y="267" width="214" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-g8-rIb">
+                    <rect key="frame" x="80.5" y="308.5" width="214" height="50"/>
                     <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="70C-et-xZL"/>
+                        <constraint firstAttribute="width" constant="214" id="cmQ-Vz-8EZ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="好友列表無邀請">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,27 +50,44 @@
                         <action selector="FLVC:" destination="-1" eventType="touchUpInside" id="ScT-Op-6H9"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCk-F2-Xii">
-                    <rect key="frame" x="80" y="379" width="214" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tTy-EB-RJH">
+                    <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="4IF-Oz-Mey"/>
+                        <constraint firstAttribute="height" constant="60" id="8ho-Bv-Kzk"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="gTY-bZ-r62"/>
+                        <constraint firstAttribute="width" constant="60" id="hB7-IB-V2P"/>
+                    </constraints>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCk-F2-Xii">
+                    <rect key="frame" x="80.5" y="405" width="214" height="50"/>
                     <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cco-Gh-pB2"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="好友列表含邀請好友">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="FLInviteVC:" destination="-1" eventType="touchUpInside" id="IXD-QN-5Fx"/>
+                    </connections>
                 </button>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tTy-EB-RJH">
-                    <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="8ho-Bv-Kzk"/>
-                        <constraint firstAttribute="width" constant="60" id="hB7-IB-V2P"/>
-                    </constraints>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="tTy-EB-RJH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5pw-ZX-Ie3"/>
-                <constraint firstItem="tTy-EB-RJH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aQd-47-46L"/>
+                <constraint firstItem="tTy-EB-RJH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3dF-S1-gOa"/>
+                <constraint firstItem="tTy-EB-RJH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3qZ-68-WQ4"/>
+                <constraint firstItem="QuP-g8-rIb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8d4-xL-g5C"/>
+                <constraint firstItem="eCk-F2-Xii" firstAttribute="top" secondItem="QuP-g8-rIb" secondAttribute="bottom" constant="46.5" id="IZb-0f-0QL"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="qEE-at-F7R" secondAttribute="trailing" constant="80.5" id="LUf-NT-Da6"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="QuP-g8-rIb" secondAttribute="trailing" constant="80.5" id="R8u-fn-UJf"/>
+                <constraint firstItem="QuP-g8-rIb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="80.5" id="RIw-5K-hMr"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="eCk-F2-Xii" secondAttribute="trailing" constant="80.5" id="Xc4-20-WZO"/>
+                <constraint firstItem="eCk-F2-Xii" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="80.5" id="bx1-6l-EY7"/>
+                <constraint firstItem="qEE-at-F7R" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="80.5" id="eAk-aN-KSp"/>
+                <constraint firstItem="QuP-g8-rIb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hW7-GE-Wrp"/>
+                <constraint firstItem="QuP-g8-rIb" firstAttribute="top" secondItem="qEE-at-F7R" secondAttribute="bottom" constant="46.5" id="vvM-ny-5Ik"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

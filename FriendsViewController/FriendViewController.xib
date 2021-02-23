@@ -20,6 +20,7 @@
                 <outlet property="nameLabel" destination="mNt-sC-ET1" id="UtR-4t-GKu"/>
                 <outlet property="scanButton" destination="OSi-Gl-aVg" id="Wyq-rT-aiv"/>
                 <outlet property="searchBar" destination="jSI-eK-jnM" id="6j5-HN-i3B"/>
+                <outlet property="searchTopConstraint" destination="fnw-qI-PYo" id="tlo-TI-7xA"/>
                 <outlet property="searchView" destination="k2V-L7-rzo" id="aN1-6n-yVd"/>
                 <outlet property="selfieImageView" destination="E0T-0c-qmY" id="8SW-Q9-sXZ"/>
                 <outlet property="settingIDLabel" destination="Qfa-9L-Pfi" id="GtP-ic-L5G"/>

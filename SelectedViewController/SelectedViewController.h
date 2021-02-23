@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NetworkObject.h"
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface SelectedViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *withoutFriendButton;
@@ -16,7 +16,5 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *FLIncludeInvition;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
-
 @end
 
-NS_ASSUME_NONNULL_END

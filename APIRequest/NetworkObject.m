@@ -88,6 +88,51 @@
        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 }
 
+-(void)fetchFriendAndInviteDataWithCompletion:(void (^)(NSArray * friendArray))completionBlock{
+
+    NSArray * urls = @[FRIENDANDINVITION];
+    NSMutableArray * friendsArray = [NSMutableArray array];
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    for (NSString * url in urls) {
+        dispatch_group_enter(group);
+        [self fetchFLDataWithURL:url WithCompletion:^(NSArray *friendArray) {
+            [friendsArray addObject:friendArray];
+            dispatch_group_leave(group);
+        }];
+        
+    }
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSMutableArray *flatArray = [NSMutableArray array];
+        for (NSMutableArray * array  in friendsArray) {
+            [flatArray addObjectsFromArray:array];
+        }
+        //Rearrange Array
+        NSMutableIndexSet * indexSet = [[NSMutableIndexSet alloc] init];
+        for (FriendModel * friend in flatArray) {
+            NSString * fid = friend.fid;
+            NSDate * date = friend.updateDate;
+            for (FriendModel * compared in flatArray) {
+                NSString * comparedFid = compared.fid;
+                NSDate * comparedDate = compared.updateDate;
+                if ([fid isEqualToString:comparedFid]) {
+                    if (comparedDate > date) {
+                        [indexSet addIndex:[flatArray indexOfObject:friend]];
+                    }
+                }
+            }
+        }
+        [flatArray removeObjectsAtIndexes:indexSet];
+        [flatArray sortUsingComparator:^NSComparisonResult(FriendModel* obj1, FriendModel* obj2) {
+            return [obj2.updateDate compare:obj1.updateDate];
+        }];
+        
+        completionBlock(flatArray);
+    });
+    
+}
 //Fetch Multi-FriendList
 
 -(void)fetchFLDataWithURL:(NSString *)url WithCompletion:(void (^)(NSArray *friendArray))completionBlock{
