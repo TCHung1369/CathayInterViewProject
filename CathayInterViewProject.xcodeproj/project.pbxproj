@@ -34,6 +34,7 @@
 		A86EB66225E48B2600E17F5E /* InvitingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB66025E48B2600E17F5E /* InvitingViewController.xib */; };
 		A86EB66725E4EB4100E17F5E /* InvitingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86EB66525E4EB4100E17F5E /* InvitingCollectionViewCell.m */; };
 		A86EB66825E4EB4100E17F5E /* InvitingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86EB66625E4EB4100E17F5E /* InvitingCollectionViewCell.xib */; };
+		A86EB66B25E5624000E17F5E /* OverlayCVFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A86EB66A25E5624000E17F5E /* OverlayCVFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		A86EB66425E4EB4100E17F5E /* InvitingCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvitingCollectionViewCell.h; sourceTree = "<group>"; };
 		A86EB66525E4EB4100E17F5E /* InvitingCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvitingCollectionViewCell.m; sourceTree = "<group>"; };
 		A86EB66625E4EB4100E17F5E /* InvitingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitingCollectionViewCell.xib; sourceTree = "<group>"; };
+		A86EB66925E5624000E17F5E /* OverlayCVFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverlayCVFlowLayout.h; sourceTree = "<group>"; };
+		A86EB66A25E5624000E17F5E /* OverlayCVFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverlayCVFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 				A86EB65E25E48B2600E17F5E /* InvitingViewController.h */,
 				A86EB65F25E48B2600E17F5E /* InvitingViewController.m */,
 				A86EB66025E48B2600E17F5E /* InvitingViewController.xib */,
+				A86EB66925E5624000E17F5E /* OverlayCVFlowLayout.h */,
+				A86EB66A25E5624000E17F5E /* OverlayCVFlowLayout.m */,
 			);
 			path = InvitingViewController;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A846F68225E100C900EEE49B /* ViewController.m in Sources */,
+				A86EB66B25E5624000E17F5E /* OverlayCVFlowLayout.m in Sources */,
 				A80B244E25E2888E00CF7766 /* NetworkObject.m in Sources */,
 				A846F67C25E100C900EEE49B /* AppDelegate.m in Sources */,
 				A846F6B525E113BC00EEE49B /* CustomTabBar.m in Sources */,

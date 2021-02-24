@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvitingViewController">
             <connections>
+                <outlet property="CollectionViewHeighConstraint" destination="D3L-fO-DW7" id="2Fj-oh-eE4"/>
                 <outlet property="arrowImageView" destination="nPY-9K-gfv" id="wWA-um-oCq"/>
                 <outlet property="atmButton" destination="I5v-Q6-DSL" id="Ocu-E5-Ged"/>
                 <outlet property="chatBadge" destination="0Dr-Pk-wqf" id="42f-3d-1Ec"/>
@@ -183,7 +184,7 @@
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Bbs-pB-kf5" firstAttribute="leading" secondItem="jH2-wx-ZAq" secondAttribute="leading" constant="35" id="2Yi-OG-40g"/>
                         <constraint firstAttribute="trailing" secondItem="WyZ-Jb-dx9" secondAttribute="trailing" id="3zn-Od-n1D"/>
@@ -203,16 +204,11 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-CX-eVk">
                     <rect key="frame" x="0.0" y="124" width="375" height="178"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="178" id="D3L-fO-DW7"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Sa3-Q1-gtc">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
+                    <collectionViewLayout key="collectionViewLayout" id="RSU-K5-6Yd" customClass="OverlayCVFlowLayout"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="NHc-Az-DQm"/>
                         <outlet property="delegate" destination="-1" id="wBG-jT-uld"/>
@@ -283,7 +279,7 @@
                 <constraint firstItem="DSK-in-0h6" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="vda-ge-KeT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="202" y="-714"/>
+            <point key="canvasLocation" x="-106" y="-1001"/>
         </view>
     </objects>
     <resources>

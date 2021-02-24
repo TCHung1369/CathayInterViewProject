@@ -33,7 +33,8 @@
 @property (nonatomic, strong) UIRefreshControl * refreshControl;
 @property (nonatomic, strong) IBOutlet UICollectionView *friendCollectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewTopConstraint;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *CollectionViewHeighConstraint;
+@property (nonatomic, strong)OverlayCVFlowLayout *flowLayout;
 @end
 
 @implementation InvitingViewController
@@ -92,6 +93,8 @@
     
     //Setting CollectionView
     [self.friendCollectionView registerNib:[UINib nibWithNibName:@"InvitingCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CollectionCell"];
+    self.flowLayout = (OverlayCVFlowLayout *)self.friendCollectionView.collectionViewLayout;
+    self.flowLayout.isExpand = true;
     
 }
 
@@ -184,9 +187,14 @@
 //UIsearchBar Delegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     self.isSearchMode = true;
-    
+    //322, 249
     [UIView animateWithDuration:0.5 animations:^{
-        self.searchViewTopConstraint.constant = -312;
+        if (self.flowLayout.isExpand == true) {
+            self.searchViewTopConstraint.constant = -312;
+        }else {
+            self.searchViewTopConstraint.constant = -239;
+        }
+        
         [self.view layoutIfNeeded];
 
     }];
@@ -246,11 +254,33 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height / 2);
+    return CGSizeMake(collectionView.frame.size.width, 89);
     
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (self.flowLayout.isExpand == false) {
 
+        self.flowLayout.isExpand = true;
+       
+    }else{
+        
+        self.flowLayout.isExpand = false;
+    }
+    
+    [UIView animateWithDuration:0.5 animations:^{
+      
+        [collectionView.collectionViewLayout invalidateLayout];
+        if ( self.flowLayout.isExpand == true) {
+            self.CollectionViewHeighConstraint.constant = 178;
+        }else{
+            self.CollectionViewHeighConstraint.constant = 105;
+        }
+        [self.view layoutIfNeeded];
+    }];
+     
+}
 
 @end

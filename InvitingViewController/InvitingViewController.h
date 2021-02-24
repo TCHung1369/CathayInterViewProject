@@ -12,6 +12,7 @@
 #import "FriendModel.h"
 #import "NetworkObject.h"
 #import "InvitingCollectionViewCell.h"
+#import "OverlayCVFlowLayout.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface InvitingViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>

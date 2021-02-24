@@ -26,11 +26,12 @@
 }
 
 -(void)settingCellButtonOutfit:(UIView *)containerView{
-   // [containerView setBackgroundColor:[UIColor greenColor]];
+   
+    [containerView.layer setShadowColor:[UIColor blackColor].CGColor ];
     [containerView.layer setCornerRadius:6];
     [containerView.layer setShadowOffset:CGSizeMake(0, 4)];
     [containerView.layer setShadowOpacity:0.1];
-    [containerView.layer setShadowRadius:16];
-    [containerView.layer setShadowColor:[UIColor blackColor].CGColor ];
+    [containerView.layer setShadowRadius:8];
+    
 }
 @end
