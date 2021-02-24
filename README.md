@@ -11,5 +11,4 @@ Feature :
 2.Search bar View extension.  
 3.Inviting-friend List that can fold and expand.  
 
-![image](MainScreen.png)
 
