@@ -53,7 +53,6 @@
         NSMutableArray * attributes = [NSMutableArray array];
         for (UICollectionViewLayoutAttributes * attribute in [super layoutAttributesForElementsInRect:rect]) {
            
-            CGFloat minY = CGRectGetMinY(self.collectionView.bounds) + self.collectionView.contentInset.top;
             CGFloat maxY = attribute.frame.size.height * attribute.indexPath.row;
             CGPoint newOrigin = CGPointMake(self.collectionView.frame.origin.x,maxY);
             

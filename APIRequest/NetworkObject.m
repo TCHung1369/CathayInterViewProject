@@ -40,7 +40,6 @@
         NSDictionary *userData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
         NSArray * users = [userData objectForKey:@"response"];
         NSDictionary * mainUser = [users firstObject];
-        NSLog(@"%@",mainUser);
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         [userDefault setObject:[mainUser objectForKey:@"name"] forKey:@"name"];
         [userDefault setObject:[mainUser objectForKey:@"kokoid"] forKey:@"kokoid"];
