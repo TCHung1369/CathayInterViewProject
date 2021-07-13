@@ -34,6 +34,7 @@
     CGRect viewRect = view.frame;
     [view.layer setCornerRadius:viewRect.size.height / 2];
     [view.layer setMasksToBounds:true];
+    //sOURCETREE TEST
 }
 
 -(void)prepareForReuse{
